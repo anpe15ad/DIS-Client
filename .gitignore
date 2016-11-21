@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/vcs.xml
+target/generated-sources/
+ressource/gson-2.2.2.jar
+.idea
