@@ -1,5 +1,6 @@
 package sdk.Service;
 
+import Security.Digester;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.methods.HttpGet;
@@ -30,21 +31,16 @@ public class LectureService {
      * @param responseCallback
      */
     //ArrayList<Book> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
-        public void getAllLectures(final ResponseCallback<ArrayList<LectureDTO>> responseCallback){
-
-            // UserDTO user = accesService.getAccessToken();
-            LectureDTO Binto = new LectureDTO();
-
-            String BintoString =  "BINTO1051U_LA_E16";// Binto.getCourseId();
+        public void getAllLectures(String code ,final ResponseCallback<ArrayList<LectureDTO>> responseCallback){
 
             //der er http også hvilken metode du skal bruge get fx.
-            HttpGet getRequest = new HttpGet(Connection.serverURL + "/lecture/" +  BintoString);
+            HttpGet getRequest = new HttpGet(Connection.serverURL + "/lecture/" +  code);
 
             //i javascript skal this altid defineres, her behøves den ikke
             connection.execute(getRequest, new ResponseParser() {
                 public void payload(String json) {
 
-                    //String jsonDecrypt = Digester.decrypt(json);
+                   // String jsonDecrypt = Digester.decrypt(json);
                     //Her bliver det modtagede json gemt i en arrayliste
                     ArrayList<LectureDTO> data;
                     data = gson.fromJson(json, new TypeToken<ArrayList<LectureDTO>>(){}.getType());

@@ -16,7 +16,7 @@ public class StartView {
 
         System.out.println("------ Velkommen til undervisningsevaluering ------");
         System.out.println("tast 1 for at logge ind");
-        System.out.println("tast 2 for at slukke programmet");
+        System.out.println("tast 0 for at slukke programmet");
 
         try{
 

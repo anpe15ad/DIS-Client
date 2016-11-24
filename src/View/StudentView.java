@@ -1,13 +1,18 @@
 package View;
 
 import Logic.Controller;
+import sdk.Connection.ResponseCallback;
 import sdk.Service.AccessService;
+import sdk.Service.CourseService;
+import sdk.Service.LectureService;
+import sdk.Service.ReviewService;
+import sdk.shared.CourseDTO;
 import sdk.shared.LectureDTO;
 import sdk.shared.ReviewDTO;
 import sdk.shared.UserDTO;
 
 
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -36,13 +41,10 @@ public class StudentView {
                     System.exit(0);
                     break;
                 case 1:
-                    controller.showCourses();
-                    courseView(currentUser);
-                    lectureView(currentUser);
-                    presentView(currentUser);
+                    controller.showCourses(currentUser);
                     break;
                 case 2:
-
+                    controller.showUserReviews(currentUser);
                     break;
                 case 3:
                     StartView startView = new StartView();
@@ -57,7 +59,22 @@ public class StudentView {
     }
 
     public void courseView(int currentUser) {
-        System.out.println("-------------------vælg fag-----------------------");
+        CourseService courseService = new CourseService();
+
+        courseService.getAllCourses(currentUser, new ResponseCallback<ArrayList<CourseDTO>>() {
+                    public void success(ArrayList<CourseDTO> data) {
+                        for (CourseDTO c : data) {
+                            System.out.println(c.getDisplaytext() + "   " + c.getCode());
+                            System.out.println();
+                        }
+                    }
+
+                    public void error(int status) {
+
+                    }
+                });
+
+                System.out.println("-------------------vælg fag-----------------------");
         System.out.println("Indtast koden for et fag eks. BINTO1035U_XB_E16");
         LectureDTO lectureDTO = new LectureDTO();
         Scanner input = new Scanner(System.in);
@@ -67,10 +84,26 @@ public class StudentView {
         Controller  controller = new Controller();
         System.out.println("-------------------------------------------------------");
         System.out.println("Der er tilknyttet følgende undervisningsgange til faget");
-        controller.showLectures();
+        controller.showLectures(currentUser, binto);
     }
 
-    public void  lectureView(int currentUser) {
+    public void  lectureView(int currentUser, String binto) {
+
+        //henter alle lectures
+        LectureService lectureService = new LectureService();
+        lectureService.getAllLectures(binto, new ResponseCallback<ArrayList<LectureDTO>>() {
+            public void success(ArrayList<LectureDTO> data) {
+                for (LectureDTO l:data) {
+                    System.out.println(l.getId()+ ": " + l.getDescription()+ "  " +l.getStartDate() +"  " + l.getType());
+                    System.out.println();
+                }
+            }
+
+            public void error(int status) {
+
+            }
+        });
+
         System.out.println("indtast id for den undervisningsgang du vil evaluere");
         System.out.println("");
         System.out.println("indtast 2 for at komme tilbage til hovedmenu");
@@ -83,7 +116,7 @@ public class StudentView {
         if (choise != 0) {
             Controller controller = new Controller();
             controller.showReviews(choise);
-           reviewMenu(lectureDTO1, currentUser);
+
         }
         if (choise == 0) ;
         {
@@ -95,7 +128,22 @@ public class StudentView {
      * denne mellem menu giver muligheden for tilføje et review
      * @param lectureId'et videre føres blot til reviewCreateView for man ved hvilket lectureId der tilføjes et review til.
      */
-    public void reviewMenu (LectureDTO lectureId, int currentUser){
+    public void reviewMenu (int lectureId, int currentUser){
+        Controller controller = new Controller();
+        ReviewService reviewService = new ReviewService();
+
+
+        reviewService.getAllReviews(lectureId, new ResponseCallback<ArrayList<ReviewDTO>>() {
+            public void success(ArrayList<ReviewDTO> reviews) {
+                for (ReviewDTO r: reviews){
+                    System.out.println("Id: "+ r.getId()+ " Kommentar:" + r.getComment()+ "  " + "Rating: " + r.getRating() );
+                }
+            }
+
+            public void error(int status) {
+
+            }
+        });
         try {
             System.out.println("tast 1 - for oprette et personligt review");
             System.out.println("tast 2 - for at komme tilbage til hovedmenuen");
@@ -104,10 +152,10 @@ public class StudentView {
 
             switch (choise) {
                 case 1:
-                    reviewCreateView(lectureId, currentUser);
+                    controller.createReview(currentUser, lectureId);
                     break;
                 case 2:
-                    presentView(currentUser);
+                    controller.presentView(currentUser);
                     break;
                 default:
                     System.out.println("Det var ikke en mulighed");
@@ -119,9 +167,7 @@ public class StudentView {
     }
 
 
-    public void reviewCreateView (LectureDTO lectureDTO, int currentUser) {
-       // System.out.println("Du evaluere på faget: "+ lectureDTO.getDescription()+ "for undervisningsgang: " + lectureDTO.getStartDate());
-        AccessService accessService = new AccessService();
+    public void reviewCreateView (int lectureid, int currentUser) {
         ReviewDTO reviewDTO = new ReviewDTO();
 
         System.out.println("Indtast din kommentar for undervisningsgangen: (tryk enter for at gå videre");
@@ -136,31 +182,69 @@ public class StudentView {
 
 
         reviewDTO.setUserId(currentUser); //(accessService.getAccessToken().getId());
-        reviewDTO.setLectureId(lectureDTO.getId());
+        reviewDTO.setLectureId(lectureid);
         reviewDTO.setComment(comment);
         reviewDTO.setRating(rating);
         reviewDTO.setDeleted(false);
 
-        Controller controller = new Controller();
-        controller.createReview(reviewDTO);
+
+        ReviewService reviewService = new ReviewService();
+
+        reviewService.create(reviewDTO, new ResponseCallback<Boolean>() {
+            public void success(Boolean data) {
+                System.out.println("");
+            }
+
+            public void error(int status) {
+                System.out.println("fik fejl: " + status );
+            }
+        } );
 
     }
 
 public void showMyReviews (int currentUser){
 
-    Controller controller = new Controller();
-    controller.showUserReviews(currentUser);
+    ReviewService reviewService = new ReviewService();
+    reviewService.getUserReviews(currentUser, new ResponseCallback<ArrayList<ReviewDTO>>() {
+        public void success(ArrayList<ReviewDTO> reviewDTOArrayList) {
+            for (ReviewDTO r : reviewDTOArrayList)
+                System.out.println("Id: "+ r.getId()+ " Kommentar:" + r.getComment()+ "  " + "Rating: " + r.getRating() );
+        }
 
-    System.out.println("Vælg et hvilket review du vil slette ved at taste dets id");
+        public void error(int status) {
+            System.out.println("Fejlede kaldet til server om brugers reviews fik fejl koden: " + status);
+        }
+    });
+
+
+    System.out.println("Vælg hvilket review du vil slette ved at taste dets id");
     System.out.println("For at gå tilbage til hoved menu tast 0");
 
     Scanner inputChoise = new Scanner(System.in);
     int choise = inputChoise.nextInt();
     if (choise == 0){
-        presentView(currentUser);
+        Controller controller = new Controller();
+        controller.presentView(currentUser);
     }
     if (choise != 0){
-        //slet review kald controller til at slette review
+        ReviewDTO reviewDTO = new ReviewDTO();
+        reviewDTO.setId(choise);
+        reviewDTO.setUserId(currentUser);
+        reviewService.deleteReviewUser(reviewDTO, new ResponseCallback<Boolean>() {
+                    public void success(Boolean data) {
+                        System.out.println("Dit Review er blevet slettet");
+                        System.out.println(data);
+                    }
+
+                    public void error(int status) {
+
+                    }
+                });
+
+                Controller controller = new Controller();
+        controller.presentView(currentUser);
+
+
     }
 
 }

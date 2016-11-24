@@ -3,6 +3,7 @@ package View;
 import Logic.Controller;
 import Security.Digester;
 import sdk.Connection.ResponseCallback;
+import sdk.Service.AccessService;
 import sdk.Service.UserService;
 import sdk.shared.UserDTO;
 
@@ -30,11 +31,13 @@ public class LoginView {
 
         UserService userService = new UserService();
 
-        userService.login(mail, pw, new ResponseCallback<UserDTO>() {
+        userService.login(mail, securePw, new ResponseCallback<UserDTO>() {
             public void success(UserDTO data) {
                 if( data == null){
                 System.out.println("Server kunne ikke finde login.");
                     int currentUser = data.getId();
+                    AccessService accessService = new AccessService();
+                    accessService.setAccessToken(data);
                 presentLogin(currentUser);
 
             }else{

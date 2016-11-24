@@ -97,6 +97,7 @@ public class Digester {
     private static byte[] base64Decode(String s) {
         try {
             BASE64Decoder d = new BASE64Decoder();
+
             return d.decodeBuffer(s);
         } catch (IOException e) {throw new RuntimeException(e);}
     }

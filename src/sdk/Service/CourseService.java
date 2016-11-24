@@ -1,6 +1,7 @@
 package sdk.Service;
 
 
+import Security.Digester;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.methods.HttpDelete;
@@ -26,26 +27,22 @@ public class CourseService {
     private Gson gson;
     private AccessService accesService;
 
-    //en constructor, når der initieres en bookservice kaldes denne også, og her laves en forbindelse.
+    //en constructor, når der initieres en Course service kaldes denne også, og her laves en forbindelse.
     public CourseService(){
         this.connection = new Connection();
         this.gson = new Gson();
         this.accesService = new AccessService();
     }
 
-    //ArrayList<Book> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
-    public void getAllCourses(final ResponseCallback<ArrayList<CourseDTO>> responseCallback){
+    //ArrayList<CourseDTO> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
+    public void getAllCourses(int currentUser, final ResponseCallback<ArrayList<CourseDTO>> responseCallback){
 
-        UserDTO user = accesService.getAccessToken();
-        int userId = 1; // user.getId();
         //der er http også hvilken metode du skal bruge get fx.
-        HttpGet getRequest = new HttpGet(Connection.serverURL + "/course/" +  userId);
+        HttpGet getRequest = new HttpGet(Connection.serverURL + "/course/" +  currentUser);
 
-        //i javascript skal this altid defineres, her behøves den ikke
         connection.execute(getRequest, new ResponseParser() {
             public void payload(String json) {
-
-                //String jsonDecrypt = Digester.decrypt(json);
+               // String jsonDecrypt = Digester.decrypt(json);
                 //Her bliver det modtagede json gemt i en arrayliste
                 ArrayList<CourseDTO> courses = gson.fromJson(json, new TypeToken<ArrayList<CourseDTO>>(){}.getType());
                 responseCallback.success(courses);
@@ -59,25 +56,6 @@ public class CourseService {
     }
 
 
-
-    public void delete(String id, final ResponseCallback<Integer> responseCallback){
-
-        HttpDelete deleteRequest = new HttpDelete(Connection.serverURL + "/books/" + id);
-        deleteRequest.addHeader("Content-Type", "application/json");
-        deleteRequest.addHeader("authorization", "NTxX4aHJ974xlJY6N3xFJXBB1gG7w8G8u8C20IFwp5Qvd4v1kHWf9PjBb1bc5Ei8");
-
-        connection.execute(deleteRequest, new ResponseParser() {
-            public void payload(String json) {
-               /* Delete delete = gson.fromJson(json, Delete.class);
-                responseCallback.success(delete.getCount());*/
-            }
-
-            public void error(int status) {
-                responseCallback.error(status);
-            }
-        });
-
-    }
     public void update(String id, Book book, final ResponseCallback<Book> responseCallback){
         try {
             HttpPut updateRequest = new HttpPut(Connection.serverURL + "/books/" + id);

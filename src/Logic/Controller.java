@@ -34,94 +34,44 @@ public class Controller {
     public void showlogin (int currentUser) {
 
         LoginView loginView = new LoginView();
-
         loginView.presentLogin(currentUser);
 
     }
 
-    public void showCourses() {
+    public void showCourses(int currentUser) {
 
-        CourseService courseService = new CourseService();
-
-        courseService.getAllCourses(new ResponseCallback<ArrayList<CourseDTO>>() {
-            public void success(ArrayList<CourseDTO> data) {
-                for (CourseDTO c: data) {
-                    System.out.println(c.getDisplaytext() + "   " + c.getCode());
-                    System.out.println();
-
-                }
-            }
-
-            public void error(int status) {
-
-            }
-        });
+       StudentView studentView = new StudentView();
+        studentView.courseView(currentUser);
 
     }
 
 
-    public void createReview (ReviewDTO reviewDTO) {
+    public void createReview (int currentUser, int lectureId ) {
 
-        ReviewService reviewService = new ReviewService();
+     StudentView studentView = new StudentView();
+        studentView.reviewCreateView(currentUser,lectureId);
+    }
 
-        reviewService.create(reviewDTO, new ResponseCallback<Boolean>() {
-            public void success(Boolean data) {
-                System.out.println("Create review gik i Succes i Responsecallback");
-            }
-
-            public void error(int status) {
-                System.out.println("fik fejl: " + status );
-            }
-        } );
+    public void reviewMenu (int currentUser, int lectureid){
+        StudentView studentView = new StudentView();
+        studentView.reviewMenu(currentUser, lectureid);
     }
 
 
-
-    public  void showLectures () {
-        LectureService lectureService = new LectureService();
-        lectureService.getAllLectures(new ResponseCallback<ArrayList<LectureDTO>>() {
-
-            public void success(ArrayList<LectureDTO> data) {
-                for (LectureDTO l:data) {
-                    System.out.println(l.getId()+ ": " + l.getDescription()+ "  " +l.getStartDate() +"  " + l.getType());
-                    System.out.println();
-                }
-            }
-
-            public void error(int status) {
-
-            }
-        });
+    public  void showLectures (int currentUser, String binto) {
+    StudentView studentView = new StudentView();
+        studentView.lectureView(currentUser, binto);
     }
 
-    public  void showReviews (int lectureId) {
-        ReviewService reviewService = new ReviewService();
+    public  void showReviews (int currentuser) {
+        StudentView studentView = new StudentView();
+        studentView.showMyReviews(currentuser);
 
-        reviewService.getAllReviews(lectureId, new ResponseCallback<ArrayList<ReviewDTO>>() {
-            public void success(ArrayList<ReviewDTO> reviews) {
-                for (ReviewDTO r: reviews){
-                   System.out.println("Id: "+ r.getId()+ " Kommentar:" + r.getComment()+ "  " + "Rating: " + r.getRating() );
-                }
-            }
-
-            public void error(int status) {
-
-            }
-        });
     }
 
     public void showUserReviews (int currentUser) {
-        ReviewService reviewService = new ReviewService();
-        reviewService.getUserReviews(currentUser, new ResponseCallback<ArrayList<ReviewDTO>>() {
-            public void success(ArrayList<ReviewDTO> data) {
-                for (ReviewDTO r : data) {
-                    System.out.println("Id: " + r.getId() + " Kommentar:" + r.getComment() + "  " + "Rating: " + r.getRating());
-                }
-            }
-            public void error(int status) {
-                System.out.println("Fejlede kaldet til server om brugers reviews fik fejl koden: " + status);
-            }
-        });
-
+      StudentView studentView = new StudentView();
+        studentView.showMyReviews(currentUser);
     }
+
 }

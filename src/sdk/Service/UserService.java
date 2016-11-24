@@ -1,5 +1,6 @@
 package sdk.Service;
 
+import Security.Digester;
 import com.google.gson.Gson;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -26,7 +27,10 @@ public class UserService {
 
         try {
             Gson gson = new Gson();
-            StringEntity loginInfo = new StringEntity(gson.toJson(login));
+            String readyEncrypt = gson.toJson(login);
+            String encrypted = Digester.encrypt(readyEncrypt);
+            StringEntity loginInfo = new StringEntity(readyEncrypt);
+
             postRequest.setEntity(loginInfo);
             postRequest.setHeader("Content-Type", "application/json");
 
@@ -34,7 +38,8 @@ public class UserService {
             Connection connection = new Connection();
             connection.execute(postRequest, new ResponseParser() {
                 public void payload(String json) {
-                    Gson gson = new Gson();
+                   // String decrypted = Digester.decrypt(json);
+                   final Gson gson = new Gson();
                     UserDTO accessToken = gson.fromJson(json, UserDTO.class);
                     AccessService accessService = new AccessService();
                     accessService.setAccessToken(accessToken);
