@@ -43,6 +43,7 @@ public class ReviewService {
 
             this.connection.execute(postRequest, new ResponseParser() {
                 public void payload(String json) {
+                    System.out.println(json);
 
 
                     //   ReviewDTO reviewDTO = gson.fromJson(json, ReviewDTO.class);

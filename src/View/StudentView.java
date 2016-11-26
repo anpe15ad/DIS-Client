@@ -70,25 +70,25 @@ public class StudentView {
                     }
 
                     public void error(int status) {
+                        System.out.println("Fik fejlen: " + status);
 
                     }
                 });
 
-                System.out.println("-------------------vælg fag-----------------------");
-        System.out.println("Indtast koden for et fag eks. BINTO1035U_XB_E16");
-        LectureDTO lectureDTO = new LectureDTO();
+        System.out.println("-------------------vælg fag-----------------------");
+        System.out.println("Indtast koden for et fag eks. BINTO1051U_LA_E16");
         Scanner input = new Scanner(System.in);
         String binto = input.nextLine();
-        lectureDTO.setCourseId(binto);
 
         Controller  controller = new Controller();
-        System.out.println("-------------------------------------------------------");
-        System.out.println("Der er tilknyttet følgende undervisningsgange til faget");
-        controller.showLectures(currentUser, binto);
+        controller.showLectures(currentUser,binto);
+
     }
 
     public void  lectureView(int currentUser, String binto) {
 
+        System.out.println("-------------------------------------------------------");
+        System.out.println("Der er tilknyttet følgende undervisningsgange til faget");
         //henter alle lectures
         LectureService lectureService = new LectureService();
         lectureService.getAllLectures(binto, new ResponseCallback<ArrayList<LectureDTO>>() {
@@ -110,12 +110,10 @@ public class StudentView {
 
         Scanner input = new Scanner(System.in);
         int choise = input.nextInt();
-        LectureDTO lectureDTO1 = new LectureDTO();
-        lectureDTO1.setId(choise);
 
         if (choise != 0) {
             Controller controller = new Controller();
-            controller.showReviews(choise);
+            controller.reviewMenu(currentUser,choise);
 
         }
         if (choise == 0) ;
@@ -128,7 +126,7 @@ public class StudentView {
      * denne mellem menu giver muligheden for tilføje et review
      * @param lectureId'et videre føres blot til reviewCreateView for man ved hvilket lectureId der tilføjes et review til.
      */
-    public void reviewMenu (int lectureId, int currentUser){
+    public void reviewMenu (int currentUser, int lectureId){
         Controller controller = new Controller();
         ReviewService reviewService = new ReviewService();
 
@@ -167,7 +165,7 @@ public class StudentView {
     }
 
 
-    public void reviewCreateView (int lectureid, int currentUser) {
+    public void reviewCreateView (int currentUser, int lectureid) {
         ReviewDTO reviewDTO = new ReviewDTO();
 
         System.out.println("Indtast din kommentar for undervisningsgangen: (tryk enter for at gå videre");
@@ -192,7 +190,7 @@ public class StudentView {
 
         reviewService.create(reviewDTO, new ResponseCallback<Boolean>() {
             public void success(Boolean data) {
-                System.out.println("");
+                System.out.println("Dit review er oprettet.");
             }
 
             public void error(int status) {

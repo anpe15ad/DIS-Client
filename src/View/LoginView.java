@@ -52,11 +52,12 @@ public class LoginView {
                 }
 
                 }if(data.getType().contentEquals("teacher")){
-                    System.out.println("Velkommen" + data.getType());
+                    System.out.println("Velkommen " + data.getType());
 
+                    int currentUser = data.getId();
                     Controller controller = new Controller();
                     // her sendes videre til teacher menu
-                    controller.showlogin(currentUser);
+                    controller.showTeacherMenu(currentUser);
 
                     }if(data.getType().contentEquals("admin")){
                     System.out.println("admins kan ikke benytte klienten, log på serveren");

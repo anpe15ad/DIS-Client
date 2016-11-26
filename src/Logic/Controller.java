@@ -3,6 +3,7 @@ package Logic;
 import View.LoginView;
 import View.StartView;
 import View.StudentView;
+import View.TeacherView;
 import sdk.Connection.ResponseCallback;
 import sdk.Service.CourseService;
 import sdk.Service.LectureService;
@@ -74,4 +75,18 @@ public class Controller {
         studentView.showMyReviews(currentUser);
     }
 
+    public void showTeacherMenu(int currentUser){
+        TeacherView teacherView = new TeacherView();
+        teacherView.presentView(currentUser);
+    }
+
+    public void showDeleteTeacher(int currentUser){
+        TeacherView teacherView = new TeacherView();
+        teacherView.deleteComment(currentUser);
+    }
+
+    public void showAverageOnCourse (int currentUser){
+        TeacherView teacherView = new TeacherView();
+        teacherView.averageOncourse(currentUser);
+    }
 }
