@@ -1,16 +1,15 @@
 package sdk.Service;
 
+import Security.Digester;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import sdk.Connection.Connection;
 import sdk.Connection.ResponseCallback;
 import sdk.Connection.ResponseParser;
-import sdk.shared.LectureDTO;
+
 import sdk.shared.ReviewDTO;
 
-import java.util.ArrayList;
 
 /**
  * Created by Anders Houmann on 14/11/2016.
@@ -23,20 +22,29 @@ public class TeacherService {
         this.connection = new Connection();
         this.gson = new Gson();
     }
+
+    /**
+     * Service der sender det asynkrone kald for at slette et review til en teachers kurser
+     * @param reviewDTO indeholder det reviewid'et der skal slettes
+     * @param responseCallback
+     */
     public void deleteReviewTeacher(ReviewDTO reviewDTO, final ResponseCallback<Boolean> responseCallback) {
         try {
-            final Gson gson = new Gson();
-
             int reviewId =reviewDTO.getId();
+            String encryptReview = Digester.encrypt(String.valueOf(reviewId));
 
-
-            HttpDelete deleteRequest = new HttpDelete(Connection.serverURL + "/teacher/review/" + reviewId);
+            HttpDelete deleteRequest = new HttpDelete(Connection.serverURL + "/teacher/review/" + encryptReview);
             deleteRequest.addHeader("Content-Type", "application/json");
 
             connection.execute(deleteRequest, new ResponseParser() {
                 public void payload(String json) {
+                    String decrypted = Digester.decrypt(json);
+                 //   if (decrypted.equals("\"\\\"true\\\"\"")) {
 
-                    responseCallback.success(true);
+                        responseCallback.success(true);
+                 //   } else {
+                        System.out.println("Returnerede ikke true 'rigtigt'");
+                 //   }
                 }
 
                 public void error(int status) {
@@ -55,18 +63,20 @@ public class TeacherService {
      * @param responseCallback
      */
     //ArrayList<Book> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
-    public void averageOnCourse(String code ,final ResponseCallback<Double> responseCallback){
+    public void averageOnCourse(String code ,final ResponseCallback<String> responseCallback){
+
+        String encrypted = Digester.encrypt(code);
 
         //der er http også hvilken metode du skal bruge get fx.
-        HttpGet getRequest = new HttpGet(Connection.serverURL + "/teacher/average/" +  code);
+        HttpGet getRequest = new HttpGet(Connection.serverURL + "/teacher/average/" +  encrypted);
 
         connection.execute(getRequest, new ResponseParser() {
             public void payload(String json) {
 
-                // String jsonDecrypt = Digester.decrypt(json);
+                 String jsonDecrypt = Digester.decrypt(json);
 
-                double data = Integer.valueOf(json);
-                responseCallback.success(data);
+
+                responseCallback.success(jsonDecrypt);
             }
 
             public void error(int status) {

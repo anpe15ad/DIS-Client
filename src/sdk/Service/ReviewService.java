@@ -34,17 +34,18 @@ public class ReviewService {
 
     public void create(ReviewDTO review, final ResponseCallback<Boolean> responseCallback) {
         try {
+
             HttpPost postRequest = new HttpPost(Connection.serverURL + "/student/review/");
             postRequest.addHeader("Content-Type", "application/json");
             // postRequest.addHeader("authorization", "NTxX4aHJ974xlJY6N3xFJXBB1gG7w8G8u8C20IFwp5Qvd4v1kHWf9PjBb1bc5Ei8");
 
-            final StringEntity reviewString = new StringEntity(gson.toJson(review));
+
+            final StringEntity reviewString = new StringEntity(Digester.encrypt(gson.toJson(review)));
             postRequest.setEntity(reviewString);
 
             this.connection.execute(postRequest, new ResponseParser() {
                 public void payload(String json) {
                     System.out.println(json);
-
 
                     //   ReviewDTO reviewDTO = gson.fromJson(json, ReviewDTO.class);
                     responseCallback.success(true);
@@ -65,16 +66,18 @@ public class ReviewService {
      * @param responseCallback
      */
     public void getAllReviews(int lectureId, final ResponseCallback<ArrayList<ReviewDTO>> responseCallback) {
+        String encryptedUserId = Digester.encrypt(String.valueOf(lectureId));
 
-        HttpGet getRequest = new HttpGet(Connection.serverURL + "/review/" + lectureId);
+
+        HttpGet getRequest = new HttpGet(Connection.serverURL + "/review/" + encryptedUserId);
 
         //i javascript skal this altid defineres, her behøves den ikke
         connection.execute(getRequest, new ResponseParser() {
             public void payload(String json) {
 
-               // String jsonDecrypt = Digester.decrypt(json);
+                String jsonDecrypt = Digester.decrypt(json);
                 //Her bliver det modtagede json gemt i en arrayliste
-                ArrayList<ReviewDTO> data = gson.fromJson(json, new TypeToken<ArrayList<ReviewDTO>>() {}.getType());
+                ArrayList<ReviewDTO> data = gson.fromJson(jsonDecrypt, new TypeToken<ArrayList<ReviewDTO>>() {}.getType());
                 responseCallback.success(data);
             }
 
@@ -92,16 +95,18 @@ public class ReviewService {
      * @param responseCallback
      */
     public void getUserReviews(int userId, final ResponseCallback<ArrayList<ReviewDTO>> responseCallback) {
+        String encryptedUserId = Digester.encrypt(String.valueOf(userId));
+
         //der er http også hvilken metode du skal bruge get fx.
-        HttpGet getRequest = new HttpGet(Connection.serverURL + "/student/review/" + userId);
+        HttpGet getRequest = new HttpGet(Connection.serverURL + "/student/review/" + encryptedUserId);
 
         //i javascript skal this altid defineres, her behøves den ikke
         connection.execute(getRequest, new ResponseParser() {
             public void payload(String json) {
 
-              //  String jsonDecrypt = Digester.decrypt(json);
+                String jsonDecrypt = Digester.decrypt(json);
                 //Her bliver det modtagede json gemt i en arrayliste
-                ArrayList<ReviewDTO> data = gson.fromJson(json, new TypeToken<ArrayList<ReviewDTO>>() {}.getType());
+                ArrayList<ReviewDTO> data = gson.fromJson(jsonDecrypt, new TypeToken<ArrayList<ReviewDTO>>() {}.getType());
                 responseCallback.success(data);
             }
 
@@ -125,7 +130,11 @@ public class ReviewService {
             int reviewId =reviewDTO.getId();
             int userId = reviewDTO.getUserId();
 
-            HttpDelete deleteRequest = new HttpDelete(Connection.serverURL + "/student/review/" + reviewId + "/"+ userId);
+            String encryptReview = Digester.encrypt(String.valueOf(reviewId));
+            String encryptUser = Digester.encrypt(String.valueOf(userId));
+
+
+            HttpDelete deleteRequest = new HttpDelete(Connection.serverURL + "/student/review/" + encryptReview + "/"+ encryptUser);
             deleteRequest.addHeader("Content-Type", "application/json");
 
             connection.execute(deleteRequest, new ResponseParser() {

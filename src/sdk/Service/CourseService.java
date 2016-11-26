@@ -36,15 +36,16 @@ public class CourseService {
 
     //ArrayList<CourseDTO> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
     public void getAllCourses(int currentUser, final ResponseCallback<ArrayList<CourseDTO>> responseCallback){
+        String encryptedUserId = Digester.encrypt(String.valueOf(currentUser));
 
         //der er http også hvilken metode du skal bruge get fx.
-        HttpGet getRequest = new HttpGet(Connection.serverURL + "/course/" +  currentUser);
+        HttpGet getRequest = new HttpGet(Connection.serverURL + "/course/" +  encryptedUserId);
 
         connection.execute(getRequest, new ResponseParser() {
             public void payload(String json) {
-               // String jsonDecrypt = Digester.decrypt(json);
+                String jsonDecrypt = Digester.decrypt(json);
                 //Her bliver det modtagede json gemt i en arrayliste
-                ArrayList<CourseDTO> courses = gson.fromJson(json, new TypeToken<ArrayList<CourseDTO>>(){}.getType());
+                ArrayList<CourseDTO> courses = gson.fromJson(jsonDecrypt, new TypeToken<ArrayList<CourseDTO>>(){}.getType());
                 responseCallback.success(courses);
             }
 

@@ -29,7 +29,7 @@ public class UserService {
             Gson gson = new Gson();
             String readyEncrypt = gson.toJson(login);
             String encrypted = Digester.encrypt(readyEncrypt);
-            StringEntity loginInfo = new StringEntity(readyEncrypt);
+            StringEntity loginInfo = new StringEntity(encrypted);
 
             postRequest.setEntity(loginInfo);
             postRequest.setHeader("Content-Type", "application/json");
@@ -38,9 +38,9 @@ public class UserService {
             Connection connection = new Connection();
             connection.execute(postRequest, new ResponseParser() {
                 public void payload(String json) {
-                   // String decrypted = Digester.decrypt(json);
+                    String decrypted = Digester.decrypt(json);
                    final Gson gson = new Gson();
-                    UserDTO accessToken = gson.fromJson(json, UserDTO.class);
+                    UserDTO accessToken = gson.fromJson(decrypted, UserDTO.class);
                     AccessService accessService = new AccessService();
                     accessService.setAccessToken(accessToken);
                     responseCallback.success(accessToken);

@@ -184,8 +184,8 @@ public class TeacherView {
         String binto = input.nextLine();
 
 
-        teacherService.averageOnCourse(binto, new ResponseCallback<Double>() {
-            public void success(Double data) {
+        teacherService.averageOnCourse(binto, new ResponseCallback<String>() {
+            public void success(String data) {
                 System.out.println("Gennemsnittet for kurset: "+data);
             }
 
