@@ -28,6 +28,7 @@ public class LectureService {
 
     /**
      * Denne metode henter alle lectures ved et asynkront kald igennem responsecallback.
+     * @param code der er hvilket BINTO nr kurset har.
      * @param responseCallback
      */
     //ArrayList<Book> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.

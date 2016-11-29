@@ -38,13 +38,8 @@ public class TeacherService {
 
             connection.execute(deleteRequest, new ResponseParser() {
                 public void payload(String json) {
-                    String decrypted = Digester.decrypt(json);
-                 //   if (decrypted.equals("\"\\\"true\\\"\"")) {
-
+                  //  String decrypted = Digester.decrypt(json);
                         responseCallback.success(true);
-                 //   } else {
-                        System.out.println("Returnerede ikke true 'rigtigt'");
-                 //   }
                 }
 
                 public void error(int status) {
@@ -59,10 +54,11 @@ public class TeacherService {
     }
 
     /**
-     * Denne metode henter alle lectures ved et asynkront kald igennem responsecallback.
+     * Henter gennemsnittet for et kursus.
+     * @param code som er f.eks. BINTO1051U_LA_E16
      * @param responseCallback
      */
-    //ArrayList<Book> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
+
     public void averageOnCourse(String code ,final ResponseCallback<String> responseCallback){
 
         String encrypted = Digester.encrypt(code);
@@ -75,6 +71,33 @@ public class TeacherService {
 
                  String jsonDecrypt = Digester.decrypt(json);
 
+
+                responseCallback.success(jsonDecrypt);
+            }
+
+            public void error(int status) {
+                responseCallback.error(status);
+            }
+        });
+
+    }
+
+    /**
+     * Denne metode laver asynkront kald til serveren for et courseId f.eks. 477 og
+     * returnere antallet af deltagere i en String.
+     * @param courseId Id'et for kurset der skal returneres gennemsnit eks. 477.
+     * @param responseCallback
+     */
+    public void participents(String courseId ,final ResponseCallback<String> responseCallback){
+
+        String encrypted = Digester.encrypt(courseId);
+
+        //der er http også hvilken metode du skal bruge get fx.
+        HttpGet getRequest = new HttpGet(Connection.serverURL + "/teacher/participents/" +  encrypted);
+
+        connection.execute(getRequest, new ResponseParser() {
+            public void payload(String json) {
+                String jsonDecrypt = Digester.decrypt(json);
 
                 responseCallback.success(jsonDecrypt);
             }

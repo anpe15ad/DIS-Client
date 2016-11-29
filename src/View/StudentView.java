@@ -20,10 +20,16 @@ import java.util.Scanner;
  */
 public class StudentView {
 
-    public void presentView (int currentUser) {
-        Controller controller = new Controller();
+    private Controller controller = new Controller();
 
-        while (true) {
+    public StudentView () {
+        this.controller = new Controller();
+    }
+
+
+    public void presentView (int currentUser) {
+
+        try {
             System.out.println("Velkommen til studerende");
             System.out.println("vælg et fag");
             System.out.println("vælg 0 for at slukke programmet");
@@ -36,7 +42,7 @@ public class StudentView {
             Scanner input = new Scanner(System.in);
             int valg = input.nextInt();
 
-            switch (valg){
+            switch (valg) {
                 case 0:
                     System.exit(0);
                     break;
@@ -55,6 +61,10 @@ public class StudentView {
                     presentView(currentUser);
                     break;
             }
+        }catch (Exception e){
+            System.out.println("------------------------------------------------------");
+            System.out.println("Du indtastede en forkert værdi");
+            controller.presentView(currentUser);
         }
     }
 
@@ -74,15 +84,19 @@ public class StudentView {
 
                     }
                 });
+        try {
 
-        System.out.println("-------------------vælg fag-----------------------");
-        System.out.println("Indtast koden for et fag eks. BINTO1051U_LA_E16");
-        Scanner input = new Scanner(System.in);
-        String binto = input.nextLine();
 
-        Controller  controller = new Controller();
-        controller.showLectures(currentUser,binto);
+            System.out.println("-------------------vælg fag-----------------------");
+            System.out.println("Indtast koden for et fag eks. BINTO1051U_LA_E16");
+            Scanner input = new Scanner(System.in);
+            String binto = input.nextLine();
 
+            controller.showLectures(currentUser,binto);
+        }catch (Exception e){
+           System.out.println("Du indtastede en forkert værdi");
+
+        }
     }
 
     public void  lectureView(int currentUser, String binto) {
@@ -104,21 +118,29 @@ public class StudentView {
             }
         });
 
-        System.out.println("indtast id for den undervisningsgang du vil evaluere");
-        System.out.println("");
-        System.out.println("indtast 2 for at komme tilbage til hovedmenu");
+        try {
 
-        Scanner input = new Scanner(System.in);
-        int choise = input.nextInt();
 
-        if (choise != 0) {
-            Controller controller = new Controller();
-            controller.reviewMenu(currentUser,choise);
+            System.out.println("indtast id for den undervisningsgang du vil evaluere");
+            System.out.println("");
+            System.out.println("indtast 2 for at komme tilbage til hovedmenu");
 
-        }
-        if (choise == 0) ;
-        {
-            presentView(currentUser);
+            Scanner input = new Scanner(System.in);
+            int choise = input.nextInt();
+
+            if (choise != 0) {
+                Controller controller = new Controller();
+                controller.reviewMenu(currentUser, choise);
+
+            }
+            if (choise == 0) ;
+            {
+                presentView(currentUser);
+            }
+        }catch (Exception e){
+            System.out.println("------------------------------------------------------");
+            System.out.println("Du indtastede en forkert værdi");
+            controller.showCourses(currentUser);
         }
     }
 
@@ -159,8 +181,10 @@ public class StudentView {
                     System.out.println("Det var ikke en mulighed");
             }
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println("------------------------------------------------------");
+            System.out.println("Du indtastede en forkert værdi");
             System.out.println("Der blev fundet fejlen:" + e);
+            controller.reviewMenu(currentUser, lectureId);
         }
     }
 
@@ -172,32 +196,36 @@ public class StudentView {
         Scanner inputComment = new Scanner(System.in);
 
         String comment = inputComment.nextLine();
+        try {
+            System.out.println("På en skala 1-5 hvor 5 er det bedste, hvor god var undervisningen?");
+            Scanner inputRating = new Scanner(System.in);
 
-        System.out.println("På en skala 1-5 hvor 5 er det bedste, hvor god var undervisningen?");
-        Scanner inputRating = new Scanner(System.in);
-
-        int rating = inputRating.nextInt();
-
-
-        reviewDTO.setUserId(currentUser); //(accessService.getAccessToken().getId());
-        reviewDTO.setLectureId(lectureid);
-        reviewDTO.setComment(comment);
-        reviewDTO.setRating(rating);
-        reviewDTO.setDeleted(false);
+            int rating = inputRating.nextInt();
 
 
-        ReviewService reviewService = new ReviewService();
+            reviewDTO.setUserId(currentUser);
+            reviewDTO.setLectureId(lectureid);
+            reviewDTO.setComment(comment);
+            reviewDTO.setRating(rating);
+            reviewDTO.setDeleted(false);
 
-        reviewService.create(reviewDTO, new ResponseCallback<Boolean>() {
-            public void success(Boolean data) {
-                System.out.println("Dit review er oprettet.");
-            }
 
-            public void error(int status) {
-                System.out.println("fik fejl: " + status );
-            }
-        } );
+            ReviewService reviewService = new ReviewService();
 
+            reviewService.create(reviewDTO, new ResponseCallback<Boolean>() {
+                public void success(Boolean data) {
+                    System.out.println("Dit review er oprettet.");
+                }
+
+                public void error(int status) {
+                    System.out.println("fik fejl: " + status);
+                }
+            });
+        }catch (Exception e) {
+            System.out.println("------------------------------------------------------");
+           System.out.println("Du indtastede en forkert værdi");
+            controller.reviewCreate(currentUser,lectureid);
+        }
     }
 
 public void showMyReviews (int currentUser){
@@ -218,33 +246,38 @@ public void showMyReviews (int currentUser){
     System.out.println("Vælg hvilket review du vil slette ved at taste dets id");
     System.out.println("For at gå tilbage til hoved menu tast 0");
 
-    Scanner inputChoise = new Scanner(System.in);
-    int choise = inputChoise.nextInt();
-    if (choise == 0){
-        Controller controller = new Controller();
-        controller.presentView(currentUser);
+    try {
+        Scanner inputChoise = new Scanner(System.in);
+        int choise = inputChoise.nextInt();
+        if (choise == 0) {
+            Controller controller = new Controller();
+            controller.presentView(currentUser);
+        }
+        if (choise != 0) {
+            ReviewDTO reviewDTO = new ReviewDTO();
+            reviewDTO.setId(choise);
+            reviewDTO.setUserId(currentUser);
+            reviewService.deleteReviewUser(reviewDTO, new ResponseCallback<Boolean>() {
+                public void success(Boolean data) {
+                    System.out.println("Dit Review er blevet slettet");
+                    System.out.println(data);
+                }
+
+                public void error(int status) {
+
+                }
+            });
+
+            Controller controller = new Controller();
+            controller.presentView(currentUser);
+
+
+        }
+    }catch (Exception e){
+        System.out.println("------------------------------------------------------");
+        System.out.println("Du indtastede en forkert værdi");
+        controller.showUserReviews(currentUser);
     }
-    if (choise != 0){
-        ReviewDTO reviewDTO = new ReviewDTO();
-        reviewDTO.setId(choise);
-        reviewDTO.setUserId(currentUser);
-        reviewService.deleteReviewUser(reviewDTO, new ResponseCallback<Boolean>() {
-                    public void success(Boolean data) {
-                        System.out.println("Dit Review er blevet slettet");
-                        System.out.println(data);
-                    }
-
-                    public void error(int status) {
-
-                    }
-                });
-
-                Controller controller = new Controller();
-        controller.presentView(currentUser);
-
-
-    }
-
 }
 
 

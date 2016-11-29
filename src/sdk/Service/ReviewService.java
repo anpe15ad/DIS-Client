@@ -62,8 +62,9 @@ public class ReviewService {
     }
 
     /**
-     * @param lectureId
-     * @param responseCallback
+     * Henter alle reviews for et lecureID
+     * @param lectureId er en int i denne metode.
+     * @param responseCallback modtager en Arrayliste af ReviewDTO.
      */
     public void getAllReviews(int lectureId, final ResponseCallback<ArrayList<ReviewDTO>> responseCallback) {
         String encryptedUserId = Digester.encrypt(String.valueOf(lectureId));

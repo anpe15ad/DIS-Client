@@ -43,9 +43,7 @@ public class Controller {
 
        StudentView studentView = new StudentView();
         studentView.courseView(currentUser);
-
     }
-
 
     public void createReview (int currentUser, int lectureId ) {
 
@@ -56,6 +54,11 @@ public class Controller {
     public void reviewMenu (int currentUser, int lectureid){
         StudentView studentView = new StudentView();
         studentView.reviewMenu(currentUser, lectureid);
+    }
+
+    public void reviewCreate (int currentUser, int lectureId){
+        StudentView studentView = new StudentView();
+        studentView.reviewCreateView(currentUser,lectureId);
     }
 
 
@@ -88,5 +91,23 @@ public class Controller {
     public void showAverageOnCourse (int currentUser){
         TeacherView teacherView = new TeacherView();
         teacherView.averageOncourse(currentUser);
+    }
+
+    public void showCourseTeacher (int currentUser){
+        TeacherView teacherView = new TeacherView();
+        teacherView.getcourses(currentUser);
+    }
+
+    public void showlectureTeacher (int currentUser, String binto) {
+        TeacherView teacherView = new TeacherView();
+        teacherView.getLectures(currentUser, binto);
+    }
+    public void showParticipents (int currentUser) {
+        TeacherView teacherView = new TeacherView();
+        teacherView.participents(currentUser);
+    }
+    public void showPresenViewTeacher (int currentUser){
+        TeacherView teacherView = new TeacherView();
+        teacherView.presentView(currentUser);
     }
 }

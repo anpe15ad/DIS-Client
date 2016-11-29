@@ -10,9 +10,13 @@ import java.util.Scanner;
  * Created by andershoumann on 20/11/2016.
  */
 public class StartView {
+    private Controller controller = new Controller();
+
+    public StartView(){
+        this.controller = new Controller();
+    }
 
     public void mainMenu() {
-        Controller controller = new Controller();
 
         System.out.println("------ Velkommen til undervisningsevaluering ------");
         System.out.println("tast 1 for at logge ind");
@@ -39,7 +43,7 @@ public class StartView {
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("Det lykkedes ikke at finde en menu");
-            mainMenu();
+            controller.showMainMenu();
         }
 
     }

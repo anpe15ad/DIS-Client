@@ -31,48 +31,50 @@ public class TeacherView {
     }
 
     public void presentView(int currentuser) {
-        Controller controller = new Controller();
-
         System.out.println("Som underviser kan du slette kommentarer til alle reviews");
         System.out.println("Tast 1 for at slette et review.");
         System.out.println("Tast 2 for se gennemsnittet for et af dine kurser.");
-        System.out.println("Tast 3 for at logge ud.");
+        System.out.println("Tast 3 for at se antal deltagere for et kursus.");
+        System.out.println("Tast 4 for at logge ud.");
+    try {
+    Scanner inout = new Scanner(System.in);
+    int choise = inout.nextInt();
 
-        Scanner inout = new Scanner(System.in);
-        int choise = inout.nextInt();
+    switch (choise) {
+        case 0:
+            System.exit(0);
+        case 1:
+            controller.showDeleteTeacher(currentuser);
+            break;
+        case 2:
+            controller.showAverageOnCourse(currentuser);
+            break;
+        case 3:
+            controller.showParticipents(currentuser);
 
-        switch (choise) {
-            case 0:
-                System.exit(0);
-            case 1:
-                controller.showDeleteTeacher(currentuser);
-                break;
-            case 2:
-                controller.showAverageOnCourse(currentuser);
-            case 3:
-                controller.showMainMenu();
-                break;
-            default:
-                System.out.println("Det var ikke en mulighed");
-                controller.showTeacherMenu(currentuser);
-                break;
+        case 4:
+            controller.showMainMenu();
+            break;
+        default:
+            System.out.println("Det var ikke en mulighed");
+            controller.showTeacherMenu(currentuser);
+            break;
+            }
+        }catch (Exception e){
+        e.printStackTrace();
+        System.out.println("------------------------------------------------------");
+        System.out.println("Du indtastede en forkert værdi");
+        controller.showPresenViewTeacher(currentuser);
         }
     }
 
-    /**
-     * Denne metode henter alle kurser for en teacher og alle lectures til et kursus.
-     * Hvorefter den henter alle reviews for et lecture, og du tilsidst kan taste id'et for det review der skal slettes.
-     *
-     * @param currentUser
-     */
-    public void deleteComment(int currentUser) {
-
+    public void getcourses (int currentUser) {
         CourseService courseService = new CourseService();
 
         courseService.getAllCourses(currentUser, new ResponseCallback<ArrayList<CourseDTO>>() {
             public void success(ArrayList<CourseDTO> data) {
                 for (CourseDTO c : data) {
-                    System.out.println(c.getDisplaytext() + "   " + c.getCode());
+                    System.out.println("Id: " + c.getId()+ " "+c.getDisplaytext() + "   " + c.getCode());
                     System.out.println();
                 }
             }
@@ -80,17 +82,12 @@ public class TeacherView {
             public void error(int status) {
                 System.out.println("Fik fejlen: " + status);
             }
+
         });
-        System.out.println("-------------------vælg fag-----------------------");
-        System.out.println("Indtast koden for et fag eks. BINTO1035U_XB_E16");
+    }
 
-        Scanner input = new Scanner(System.in);
-        String binto = input.nextLine();
+    public void getLectures (int currentUser, String binto){
 
-        System.out.println("-------------------------------------------------------");
-        System.out.println("Der er tilknyttet følgende undervisningsgange til faget");
-
-        //henter alle lectures
         LectureService lectureService = new LectureService();
         lectureService.getAllLectures(binto, new ResponseCallback<ArrayList<LectureDTO>>() {
             public void success(ArrayList<LectureDTO> data) {
@@ -103,6 +100,29 @@ public class TeacherView {
 
             }
         });
+
+    }
+
+    /**
+     * Denne metode henter alle kurser for en teacher og alle lectures til et kursus.
+     * Hvorefter den henter alle reviews for et lecture, og du tilsidst kan taste id'et for det review der skal slettes.
+     *
+     * @param currentUser
+     */
+    public void deleteComment(int currentUser) {
+        controller.showCourseTeacher(currentUser);
+        System.out.println("-------------------vælg fag-----------------------");
+        System.out.println("Indtast koden for et fag eks. BINTO1051U_LA_E16");
+
+        Scanner input = new Scanner(System.in);
+        String binto = input.nextLine();
+
+        System.out.println("-------------------------------------------------------");
+        System.out.println("Der er tilknyttet følgende undervisningsgange til faget");
+
+        //henter alle lectures
+        controller.showlectureTeacher(currentUser,binto);
+
 
         System.out.println("indtast id for den undervisningsgang du vil slette et review");
         System.out.println("indtast 0 for at gå til hovedmenu");
@@ -161,20 +181,7 @@ public class TeacherView {
     }
 
     public void averageOncourse(int currentUser) {
-        CourseService courseService = new CourseService();
-
-        courseService.getAllCourses(currentUser, new ResponseCallback<ArrayList<CourseDTO>>() {
-            public void success(ArrayList<CourseDTO> data) {
-                for (CourseDTO c : data) {
-                    System.out.println(c.getDisplaytext() + "   " + c.getCode());
-                }
-                System.out.println();
-            }
-
-            public void error(int status) {
-
-            }
-        });
+        controller.showCourseTeacher(currentUser);
 
 
         System.out.println("-------------------vælg fag-----------------------");
@@ -197,5 +204,29 @@ public class TeacherView {
 
         controller.showTeacherMenu(currentUser);
     }
+
+    public void participents (int currentUser){
+        controller.showCourseTeacher(currentUser);
+
+        System.out.println("---------------------------------");
+        System.out.println("indtast id for det kursus du vil se deltagelse for: ");
+        Scanner input = new Scanner(System.in);
+
+        String id = input.nextLine();
+
+        teacherService.participents(id, new ResponseCallback<String>() {
+            public void success(String data) {
+                System.out.println("Deltagere til dette kursus: " + data);
+
+            }
+
+            public void error(int status) {
+
+            }
+        });
+        controller.showTeacherMenu(currentUser);
+    }
+
+
 }
 
