@@ -32,12 +32,16 @@ public class ReviewService {
 
     }
 
+    /**
+     * Kald til serveren der opretter et review
+     * @param review DTO af ReviewDTO klassen der bliver postet som en stringEntity
+     * @param responseCallback
+     */
     public void create(ReviewDTO review, final ResponseCallback<Boolean> responseCallback) {
         try {
 
             HttpPost postRequest = new HttpPost(Connection.serverURL + "/student/review/");
             postRequest.addHeader("Content-Type", "application/json");
-            // postRequest.addHeader("authorization", "NTxX4aHJ974xlJY6N3xFJXBB1gG7w8G8u8C20IFwp5Qvd4v1kHWf9PjBb1bc5Ei8");
 
 
             final StringEntity reviewString = new StringEntity(Digester.encrypt(gson.toJson(review)));
@@ -45,9 +49,7 @@ public class ReviewService {
 
             this.connection.execute(postRequest, new ResponseParser() {
                 public void payload(String json) {
-                    System.out.println(json);
 
-                    //   ReviewDTO reviewDTO = gson.fromJson(json, ReviewDTO.class);
                     responseCallback.success(true);
                 }
 

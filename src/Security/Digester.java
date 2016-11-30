@@ -7,10 +7,19 @@ import sun.misc.BASE64Encoder;
 import java.io.IOException;
 import java.security.MessageDigest;
 
-//TODO: Comments and documentation needed.
+/**
+ * Klasse hentet fra vores server fra Git.
+ * https://github.com/emilstepanian/Undervisningsevaluering
+ *
+ * Klassen indeholder alle hash og decrypterings metoder
+ * Hashing foregår med md5 hashing.
+ * Kryptering foregår med XOR og BASE64.
+ */
+
+
 public class Digester {
 
-    //TODO: Set SALT and KEY in config-file.
+
     private final static String SALT = ConfigLoader.HASH_SALT;
     private final static String KEY = ConfigLoader.ENCRYPT_KEY;
     private static MessageDigest digester;
@@ -39,7 +48,11 @@ public class Digester {
         return Digester._hash(str);
     }
 
-    //Hashing + SALT påbegyndes
+    /**
+     * Hashing med salt
+     * @param str
+     * @return
+     */
     public static String hashWithSalt(String str){
         if (str == null || str.length() == 0) {
             throw new IllegalArgumentException("Error");
@@ -49,7 +62,12 @@ public class Digester {
 
         return Digester._hash(str);
     }
-    //konventerer hashværdien til hexidecimaler
+
+    /**
+     * Konvertere hashværdien til hexidecimaler
+     * @param str
+     * @return
+     */
     private static String _hash(String str){
         digester.update(str.getBytes());
         byte[] hash = digester.digest();
@@ -64,6 +82,11 @@ public class Digester {
         return hexString.toString();
     }
 
+    /**
+     * Krypterings metoden kaldt i andre klasser der kryptere en string
+     * @param s taget en String
+     * @return krypteret streng.
+     */
     public static String encrypt(String s) {
 
         String encrypted_string = s;
@@ -74,6 +97,11 @@ public class Digester {
         return encrypted_string;
     }
 
+    /**
+     * Dekrypterings metoden der bliver kaldt i andre klasser der dekryptere Strengen.
+     * @param s tager en String.
+     * @return Dekrypteret streng
+     */
     public static String decrypt(String s) {
 
         String decrypted_string = s;
@@ -94,6 +122,12 @@ public class Digester {
     }
 
     //Metode til at dekryptering
+
+    /**
+     * Base64 decode metode der bliver kaldt i dekrypterings metoden.
+     * @param s tager en String af det der skal dekrypteres
+     * @return returnere den dekrypteret
+     */
     private static byte[] base64Decode(String s) {
         try {
             BASE64Decoder d = new BASE64Decoder();

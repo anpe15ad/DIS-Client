@@ -41,8 +41,6 @@ public class UserService {
                     String decrypted = Digester.decrypt(json);
                    final Gson gson = new Gson();
                     UserDTO accessToken = gson.fromJson(decrypted, UserDTO.class);
-                    AccessService accessService = new AccessService();
-                    accessService.setAccessToken(accessToken);
                     responseCallback.success(accessToken);
                 }
                 public void error(int status) {

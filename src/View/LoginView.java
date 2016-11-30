@@ -43,8 +43,6 @@ public class LoginView {
                     if (data == null) {
                         System.out.println("Server kunne ikke finde login.");
                         int currentUser = data.getId();
-                        AccessService accessService = new AccessService();
-                        accessService.setAccessToken(data);
                         presentLogin(currentUser);
 
                     } else {

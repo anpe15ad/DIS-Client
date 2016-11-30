@@ -25,13 +25,12 @@ import sdk.shared.UserDTO;
 public class CourseService {
     private Connection connection;
     private Gson gson;
-    private AccessService accesService;
+
 
     //en constructor, når der initieres en Course service kaldes denne også, og her laves en forbindelse.
     public CourseService(){
         this.connection = new Connection();
         this.gson = new Gson();
-        this.accesService = new AccessService();
     }
 
     //ArrayList<CourseDTO> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
@@ -56,32 +55,4 @@ public class CourseService {
 
     }
 
-
-    public void update(String id, Book book, final ResponseCallback<Book> responseCallback){
-        try {
-            HttpPut updateRequest = new HttpPut(Connection.serverURL + "/books/" + id);
-            //definition af type data der sendes
-            updateRequest.addHeader("Content-Type", "application/json");
-            //definition af accestoken, (den der er logget ind)
-            updateRequest.addHeader("authorization", "NTxX4aHJ974xlJY6N3xFJXBB1gG7w8G8u8C20IFwp5Qvd4v1kHWf9PjBb1bc5Ei8");
-
-            StringEntity jsonBook = new StringEntity(gson.toJson(book));
-            updateRequest.setEntity(jsonBook);
-            connection.execute(updateRequest, new ResponseParser() {
-                public void payload(String json) {
-                    Book updatedBook = gson.fromJson(json, Book.class);
-                    responseCallback.success(updatedBook);
-                }
-
-                public void error(int status) {
-                    responseCallback.error(status);
-                }
-            });
-
-        }
-        catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-    }
 }

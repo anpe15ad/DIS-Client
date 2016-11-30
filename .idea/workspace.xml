@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d028b4-e781-4689-90d8-8e1154759b8b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Logic/Controller.class" afterPath="$PROJECT_DIR$/target/classes/Logic/Controller.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sdk/Service/StudentService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sdk/Service/StudyService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/StudentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/StudyService.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Security/Digester.class" afterPath="$PROJECT_DIR$/target/classes/Security/Digester.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/View/LoginView$1.class" afterPath="$PROJECT_DIR$/target/classes/View/LoginView$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/View/LoginView.class" afterPath="$PROJECT_DIR$/target/classes/View/LoginView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/View/StartView.class" afterPath="$PROJECT_DIR$/target/classes/View/StartView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/View/StudentView.class" afterPath="$PROJECT_DIR$/target/classes/View/StudentView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Connection/Connection$1.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Connection/Connection$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Connection/Connection.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Connection/Connection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService$1$1.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService$1$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService$1.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService$2.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/CourseService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/LectureService$1$1.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/LectureService$1$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/LectureService$1.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/LectureService$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/LectureService.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/LectureService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/ReviewService$1.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/ReviewService$1.class" />
@@ -23,14 +28,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/UserService$1.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/UserService$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sdk/Service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/sdk/Service/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Logic/Controller.java" afterPath="$PROJECT_DIR$/src/Logic/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Security/Digester.java" afterPath="$PROJECT_DIR$/src/Security/Digester.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/LoginView.java" afterPath="$PROJECT_DIR$/src/View/LoginView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/StartView.java" afterPath="$PROJECT_DIR$/src/View/StartView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/StudentView.java" afterPath="$PROJECT_DIR$/src/View/StudentView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/TeacherView.java" afterPath="$PROJECT_DIR$/src/View/TeacherView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Service/LectureService.java" afterPath="$PROJECT_DIR$/src/sdk/Service/LectureService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Connection/Connection.java" afterPath="$PROJECT_DIR$/src/sdk/Connection/Connection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Connection/ResponseCallback.java" afterPath="$PROJECT_DIR$/src/sdk/Connection/ResponseCallback.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Connection/ResponseParser.java" afterPath="$PROJECT_DIR$/src/sdk/Connection/ResponseParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Service/CourseService.java" afterPath="$PROJECT_DIR$/src/sdk/Service/CourseService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Service/ReviewService.java" afterPath="$PROJECT_DIR$/src/sdk/Service/ReviewService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Service/TeacherService.java" afterPath="$PROJECT_DIR$/src/sdk/Service/TeacherService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sdk/Service/UserService.java" afterPath="$PROJECT_DIR$/src/sdk/Service/UserService.java" />
     </list>
     <ignored path="DIS2016Client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,40 +61,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/StudentView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#7594#7595#0" expanded="false" />
-                <element signature="e#7679#7680#0" expanded="false" />
-                <element signature="e#7728#7729#0" expanded="false" />
-                <element signature="e#7809#7810#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CourseService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sdk/Service/CourseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="75">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding>
+                <element signature="e#1885#1886#0" expanded="false" />
+                <element signature="e#1947#1948#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sdk/Connection/Connection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#700#701#0" expanded="false" />
+                <element signature="e#761#762#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sdk/Service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1571#1572#0" expanded="false" />
+                <element signature="e#1641#1642#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,55 +105,254 @@
       <file leaf-file-name="LectureService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sdk/Service/LectureService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="315">
               <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/StartView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#2047#2048#0" expanded="false" />
+                <element signature="e#2117#2118#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReviewService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sdk/Service/ReviewService.java">
+      <file leaf-file-name="Digester.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Security/Digester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-499">
-              <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+            <state relative-caret-position="1845">
+              <caret line="128" column="40" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeacherService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sdk/Service/TeacherService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+      <file leaf-file-name="JAVA/Main" pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/Main">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>Main</OriginalElement>
+              <nodes>
+                <node x="2229.0" y="1647.0">View.StartView</node>
+                <node x="2824.2884738658777" y="0.0">Logic.ConfigLoader</node>
+                <node x="2210.7884738658777" y="1084.0">sdk.shared.TeacherDTO</node>
+                <node x="2134.2884738658777" y="0.0">sdk.shared.LectureDTO</node>
+                <node x="1549.5747287968438" y="2040.0">View.StudentView</node>
+                <node x="423.0" y="1647.5">sdk.Connection.ResponseCallback</node>
+                <node x="1917.3509738658772" y="1128.0">sdk.Service.AccessService</node>
+                <node x="92.72198507765302" y="2410.4816057790695">Security.Digester</node>
+                <node x="955.1163954635103" y="2336.0">Logic.Controller</node>
+                <node x="151.5" y="2095.0">View.LoginView</node>
+                <node x="612.0" y="1614.0">sdk.Service.TeacherService</node>
+                <node x="910.0" y="1603.0">sdk.Service.ReviewService</node>
+                <node x="1228.0" y="1636.0">sdk.Service.CourseService</node>
+                <node x="184.69391025641016" y="1150.0">sdk.shared.AdminDTO</node>
+                <node x="1486.0" y="1460.0">sdk.shared.ReviewDTO</node>
+                <node x="546.9865507889543" y="1150.5">sdk.Connection.ResponseParser</node>
+                <node x="1067.29391025641" y="1139.0">sdk.Connection.Connection</node>
+                <node x="2247.2884738658777" y="718.0">sdk.shared.CourseDTO</node>
+                <node x="925.7830621301771" y="2018.0">View.TeacherView</node>
+                <node x="943.9198841222876" y="718.0">sdk.shared.UserDTO</node>
+                <node x="0.0" y="1658.5">sdk.Service.UserService</node>
+                <node x="465.3581413552081" y="2430.480465305622">sdk.shared.StudyDTO</node>
+                <node x="1951.0" y="1625.0">sdk.Service.LectureService</node>
+                <node x="1125.6163954635103" y="2789.0">Main</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="sdk.shared.TeacherDTO" target="sdk.shared.UserDTO">
+                  <point x="-82.0" y="-103.0" />
+                  <point x="2292.7884738658777" y="1054.0" />
+                  <point x="1228.2948841222876" y="1054.0" />
+                  <point x="121.875" y="158.0" />
+                </edge>
+                <edge source="View.TeacherView" target="sdk.Service.LectureService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="Main" target="Logic.Controller">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.UserService" target="sdk.shared.UserDTO">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="Logic.Controller" target="View.StudentView">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.LoginView" target="sdk.Service.UserService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.LoginView" target="sdk.Connection.ResponseCallback">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.TeacherService" target="sdk.Connection.ResponseParser">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.LoginView" target="Logic.Controller">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.StartView" target="Logic.Controller">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.LectureService" target="sdk.Connection.Connection">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="Logic.Controller" target="View.TeacherView">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.TeacherView" target="sdk.Connection.ResponseCallback">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.TeacherService" target="sdk.Connection.Connection">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.shared.AdminDTO" target="sdk.shared.UserDTO">
+                  <point x="0.0" y="-37.0" />
+                  <point x="288.69391025641016" y="1064.0" />
+                  <point x="1065.7948841222876" y="1064.0" />
+                  <point x="-40.625" y="158.0" />
+                </edge>
+                <edge source="View.StudentView" target="sdk.Service.LectureService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.StudentView" target="sdk.shared.ReviewDTO">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.LectureService" target="sdk.Connection.ResponseParser">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.ReviewService" target="sdk.Connection.Connection">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.StudentView" target="sdk.Service.ReviewService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.StudentView" target="Logic.Controller">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.ReviewService" target="sdk.Connection.ResponseParser">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.AccessService" target="sdk.shared.UserDTO">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.shared.TeacherDTO" target="sdk.shared.CourseDTO">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.StudentView" target="View.StartView">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.TeacherView" target="sdk.Service.CourseService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.StudentView" target="sdk.Service.CourseService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Connection.ResponseCallback" target="Logic.Controller">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="Logic.Controller" target="View.StartView">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.StudentView" target="sdk.Connection.ResponseCallback">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.CourseService" target="sdk.Connection.Connection">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="Logic.Controller" target="View.LoginView">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.shared.CourseDTO" target="sdk.shared.LectureDTO">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.CourseService" target="sdk.Connection.ResponseParser">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.UserService" target="sdk.Connection.ResponseParser">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.LectureService" target="sdk.Service.AccessService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="sdk.Service.UserService" target="sdk.Connection.Connection">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.TeacherView" target="sdk.shared.ReviewDTO">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.TeacherView" target="Logic.Controller">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.TeacherView" target="sdk.Service.ReviewService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="View.TeacherView" target="sdk.Service.TeacherService">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.5500313648083393" x="704.6775066132057" y="1205.5092704333515" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Methods</Category>
+                <Category>Fields</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccessService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sdk/Service/AccessService.java">
+      <file leaf-file-name="TeacherService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sdk/Service/TeacherService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="720">
+              <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
               <folding>
-                <element signature="e#304#305#0" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#1553#1554#0" expanded="false" />
+                <element signature="e#1623#1624#0" expanded="false" />
+                <element signature="e#2465#2466#0" expanded="false" />
+                <element signature="e#2527#2528#0" expanded="false" />
+                <element signature="e#3418#3419#0" expanded="false" />
+                <element signature="e#3480#3481#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -154,22 +361,27 @@
       <file leaf-file-name="LoginView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/LoginView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+            <state relative-caret-position="525">
+              <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#381#382#0" expanded="false" />
+                <element signature="e#431#432#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeacherView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/TeacherView.java">
+      <file leaf-file-name="AccessService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sdk/Service/AccessService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="216" column="28" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
+            <state relative-caret-position="195">
+              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#220#221#0" expanded="false" />
+                <element signature="e#263#264#0" expanded="false" />
+                <element signature="e#375#376#0" expanded="false" />
+                <element signature="e#417#418#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -202,31 +414,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sdk/Connection/ResponseParser.java" />
         <option value="$PROJECT_DIR$/src/sdk/Models/BaseModel.java" />
         <option value="$PROJECT_DIR$/src/Logic/ConfigLoader.java" />
         <option value="$PROJECT_DIR$/src/sdk/Models/Course.java" />
         <option value="$PROJECT_DIR$/src/sdk/Models/User.java" />
         <option value="$PROJECT_DIR$/src/sdk/shared/ReviewDTO.java" />
         <option value="$PROJECT_DIR$/src/sdk/Service/AccessService.java" />
-        <option value="$PROJECT_DIR$/src/sdk/Service/StudyService.java" />
-        <option value="$PROJECT_DIR$/src/sdk/Connection/Connection.java" />
-        <option value="$PROJECT_DIR$/src/sdk/Connection/ResponseCallback.java" />
         <option value="$PROJECT_DIR$/src/sdk/shared/LectureDTO.java" />
         <option value="$PROJECT_DIR$/src/sdk/Connection/ResponseCallback2.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/Security/Digester.java" />
-        <option value="$PROJECT_DIR$/src/sdk/Service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/sdk/Service/CourseService.java" />
-        <option value="$PROJECT_DIR$/src/View/LoginView.java" />
         <option value="$PROJECT_DIR$/src/View/StartView.java" />
         <option value="$PROJECT_DIR$/src/View/TeacherView.java" />
         <option value="$PROJECT_DIR$/src/Logic/Controller.java" />
         <option value="$PROJECT_DIR$/src/View/StudentView.java" />
         <option value="$PROJECT_DIR$/src/sdk/Service/TeacherService.java" />
         <option value="$PROJECT_DIR$/src/sdk/Service/LectureService.java" />
+        <option value="$PROJECT_DIR$/src/sdk/Service/StudyService.java" />
+        <option value="$PROJECT_DIR$/src/sdk/Connection/Connection.java" />
+        <option value="$PROJECT_DIR$/src/sdk/Connection/ResponseCallback.java" />
+        <option value="$PROJECT_DIR$/src/sdk/Connection/ResponseParser.java" />
+        <option value="$PROJECT_DIR$/src/View/LoginView.java" />
+        <option value="$PROJECT_DIR$/src/sdk/Service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/sdk/Service/CourseService.java" />
         <option value="$PROJECT_DIR$/src/sdk/Service/ReviewService.java" />
+        <option value="$PROJECT_DIR$/src/Security/Digester.java" />
       </list>
     </option>
   </component>
@@ -272,8 +484,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,6 +569,10 @@
               <option name="myItemId" value="sdk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -379,6 +593,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DIS2016Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DIS2016Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Connection" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -417,6 +653,8 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,7 +663,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Undervisningsevaluering_Lokal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ressource/Class diagram.png" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -936,7 +1174,8 @@
       <workItem from="1479996399086" duration="1309000" />
       <workItem from="1479999145312" duration="2139000" />
       <workItem from="1480149107191" duration="26933000" />
-      <workItem from="1480409474327" duration="2360000" />
+      <workItem from="1480409474327" duration="5163000" />
+      <workItem from="1480505970029" duration="697000" />
     </task>
     <task id="LOCAL-00001" summary="First commit, funktioner der virker: login, vis lectures, courses, allreviews&#10;mangler: review for specifik user, slet egen kommentar, client sletter review.">
       <created>1479753158429</created>
@@ -973,11 +1212,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480170851838</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Teacher kan nu beregne et gns. for sit fag (course) og kan se hvor mange der deltagere i et kursus.">
+      <created>1480412410538</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1480412410538</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102218000" />
+    <option name="totallyTimeSpent" value="105718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -985,18 +1231,19 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.496875" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.5078125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32802126" sideWeight="0.4921875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UML Diagrams" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.4921875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1006,9 +1253,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.496875" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1028,7 +1276,8 @@
     <MESSAGE value="Password bliver nu hashet på klienten, alle endpoints burde virke, men får nullpointer på lecture, virker heller ikke i postman. Der noget på serveren der ****." />
     <MESSAGE value="Teacher kan nu logge ind og slette reviews for brugere klient krav 8 opfyldt." />
     <MESSAGE value="Krypterer på alt både fra og til server.&#10;Teacher kan se gennemsnitlige rating for sit kursus. 3.285 for VØS 3&#10;Server laver beregningerne." />
-    <option name="LAST_COMMIT_MESSAGE" value="Krypterer på alt både fra og til server.&#10;Teacher kan se gennemsnitlige rating for sit kursus. 3.285 for VØS 3&#10;Server laver beregningerne." />
+    <MESSAGE value="Teacher kan nu beregne et gns. for sit fag (course) og kan se hvor mange der deltagere i et kursus." />
+    <option name="LAST_COMMIT_MESSAGE" value="Teacher kan nu beregne et gns. for sit fag (course) og kan se hvor mange der deltagere i et kursus." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1044,35 +1293,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/ResponseCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/ResponseParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="32" column="62" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sdk/Service/LectureService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2047#2048#0" expanded="false" />
+            <element signature="e#2117#2118#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1083,8 +1312,8 @@
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#595#596#0" expanded="false" />
+            <element signature="e#700#701#0" expanded="false" />
+            <element signature="e#761#762#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1093,7 +1322,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1885#1886#0" expanded="false" />
+            <element signature="e#1947#1948#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,7 +1341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,9 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1141,7 +1369,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1571#1572#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,7 +1396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1228,13 +1459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/ResponseParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sdk/shared/ReviewDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1255,60 +1479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Security/Digester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#595#596#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Service/StudyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/ResponseCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1316,19 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1336,9 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,13 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
           <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#7594#7595#0" expanded="false" />
-            <element signature="e#7679#7680#0" expanded="false" />
-            <element signature="e#7728#7729#0" expanded="false" />
-            <element signature="e#7809#7810#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,54 +1507,349 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="216" column="28" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sdk/Service/TeacherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="false" />
+            <element signature="e#1623#1624#0" expanded="false" />
+            <element signature="e#2465#2466#0" expanded="false" />
+            <element signature="e#2527#2528#0" expanded="false" />
+            <element signature="e#3418#3419#0" expanded="false" />
+            <element signature="e#3480#3481#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sdk/Service/StudyService.java" />
+    <entry file="file://$PROJECT_DIR$/src/sdk/Service/StudentService.java" />
+    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#700#701#0" expanded="false" />
+            <element signature="e#761#762#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/ResponseCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sdk/Connection/ResponseParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#381#382#0" expanded="false" />
+            <element signature="e#431#432#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sdk/Service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1571#1572#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sdk/Service/AccessService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#220#221#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
+            <element signature="e#375#376#0" expanded="false" />
+            <element signature="e#417#418#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sdk/Service/CourseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Service/AccessService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Service/LectureService.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-          <folding />
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="e#1885#1886#0" expanded="false" />
+            <element signature="e#1947#1948#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sdk/Service/ReviewService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-499">
-          <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+        <state relative-caret-position="-1136">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sdk/Service/LectureService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2047#2048#0" expanded="false" />
+            <element signature="e#2117#2118#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/BASE64Encoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Security/Digester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="128" column="40" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sdk/Service/TeacherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/ressource/Class diagram.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Main">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Main</OriginalElement>
+          <nodes>
+            <node x="2229.0" y="1647.0">View.StartView</node>
+            <node x="2824.2884738658777" y="0.0">Logic.ConfigLoader</node>
+            <node x="2210.7884738658777" y="1084.0">sdk.shared.TeacherDTO</node>
+            <node x="2134.2884738658777" y="0.0">sdk.shared.LectureDTO</node>
+            <node x="1549.5747287968438" y="2040.0">View.StudentView</node>
+            <node x="423.0" y="1647.5">sdk.Connection.ResponseCallback</node>
+            <node x="1917.3509738658772" y="1128.0">sdk.Service.AccessService</node>
+            <node x="92.72198507765302" y="2410.4816057790695">Security.Digester</node>
+            <node x="955.1163954635103" y="2336.0">Logic.Controller</node>
+            <node x="151.5" y="2095.0">View.LoginView</node>
+            <node x="612.0" y="1614.0">sdk.Service.TeacherService</node>
+            <node x="910.0" y="1603.0">sdk.Service.ReviewService</node>
+            <node x="1228.0" y="1636.0">sdk.Service.CourseService</node>
+            <node x="184.69391025641016" y="1150.0">sdk.shared.AdminDTO</node>
+            <node x="1486.0" y="1460.0">sdk.shared.ReviewDTO</node>
+            <node x="546.9865507889543" y="1150.5">sdk.Connection.ResponseParser</node>
+            <node x="1067.29391025641" y="1139.0">sdk.Connection.Connection</node>
+            <node x="2247.2884738658777" y="718.0">sdk.shared.CourseDTO</node>
+            <node x="925.7830621301771" y="2018.0">View.TeacherView</node>
+            <node x="943.9198841222876" y="718.0">sdk.shared.UserDTO</node>
+            <node x="0.0" y="1658.5">sdk.Service.UserService</node>
+            <node x="465.3581413552081" y="2430.480465305622">sdk.shared.StudyDTO</node>
+            <node x="1951.0" y="1625.0">sdk.Service.LectureService</node>
+            <node x="1125.6163954635103" y="2789.0">Main</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="sdk.shared.TeacherDTO" target="sdk.shared.UserDTO">
+              <point x="-82.0" y="-103.0" />
+              <point x="2292.7884738658777" y="1054.0" />
+              <point x="1228.2948841222876" y="1054.0" />
+              <point x="121.875" y="158.0" />
+            </edge>
+            <edge source="View.TeacherView" target="sdk.Service.LectureService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Main" target="Logic.Controller">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.UserService" target="sdk.shared.UserDTO">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Logic.Controller" target="View.StudentView">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.LoginView" target="sdk.Service.UserService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.LoginView" target="sdk.Connection.ResponseCallback">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.TeacherService" target="sdk.Connection.ResponseParser">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.LoginView" target="Logic.Controller">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.StartView" target="Logic.Controller">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.LectureService" target="sdk.Connection.Connection">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Logic.Controller" target="View.TeacherView">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.TeacherView" target="sdk.Connection.ResponseCallback">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.TeacherService" target="sdk.Connection.Connection">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.shared.AdminDTO" target="sdk.shared.UserDTO">
+              <point x="0.0" y="-37.0" />
+              <point x="288.69391025641016" y="1064.0" />
+              <point x="1065.7948841222876" y="1064.0" />
+              <point x="-40.625" y="158.0" />
+            </edge>
+            <edge source="View.StudentView" target="sdk.Service.LectureService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.StudentView" target="sdk.shared.ReviewDTO">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.LectureService" target="sdk.Connection.ResponseParser">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.ReviewService" target="sdk.Connection.Connection">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.StudentView" target="sdk.Service.ReviewService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.StudentView" target="Logic.Controller">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.ReviewService" target="sdk.Connection.ResponseParser">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.AccessService" target="sdk.shared.UserDTO">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.shared.TeacherDTO" target="sdk.shared.CourseDTO">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.StudentView" target="View.StartView">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.TeacherView" target="sdk.Service.CourseService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.StudentView" target="sdk.Service.CourseService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Connection.ResponseCallback" target="Logic.Controller">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Logic.Controller" target="View.StartView">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.StudentView" target="sdk.Connection.ResponseCallback">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.CourseService" target="sdk.Connection.Connection">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="Logic.Controller" target="View.LoginView">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.shared.CourseDTO" target="sdk.shared.LectureDTO">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.CourseService" target="sdk.Connection.ResponseParser">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.UserService" target="sdk.Connection.ResponseParser">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.LectureService" target="sdk.Service.AccessService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="sdk.Service.UserService" target="sdk.Connection.Connection">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.TeacherView" target="sdk.shared.ReviewDTO">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.TeacherView" target="Logic.Controller">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.TeacherView" target="sdk.Service.ReviewService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="View.TeacherView" target="sdk.Service.TeacherService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.5500313648083393" x="704.6775066132057" y="1205.5092704333515" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
