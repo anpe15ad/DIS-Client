@@ -1,5 +1,8 @@
 package sdk.shared;
 
+/**
+ * Hele klassen er hentet fra vores fælles server: https://github.com/emilstepanian/Undervisningsevaluering
+ */
 public class StudentDTO extends UserDTO {
 
 	private static final long serialVersionUID = 1L;

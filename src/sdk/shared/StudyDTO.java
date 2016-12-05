@@ -2,6 +2,7 @@ package sdk.shared;
 
 /**
  * Created by andershoumann on 28/10/2016.
+ * Hele klassen er hentet fra vores fælles server: https://github.com/emilstepanian/Undervisningsevaluering
  */
 public class StudyDTO {
 

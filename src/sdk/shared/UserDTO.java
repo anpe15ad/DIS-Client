@@ -2,6 +2,9 @@ package sdk.shared;
 
 import java.io.Serializable;
 
+/**
+ * Hele klassen er hentet fra vores fælles server: https://github.com/emilstepanian/Undervisningsevaluering
+ */
 public class UserDTO implements Serializable {
 	
 	private int id;

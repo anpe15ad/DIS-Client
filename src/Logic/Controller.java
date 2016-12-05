@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Created by andershoumann on 17/11/2016.
+ * Controller styrer hvilke views der vises.
  */
 public class Controller {
 

@@ -33,6 +33,14 @@ public class CourseService {
         this.gson = new Gson();
     }
 
+    /**
+     * Metode inspireret af metode lavet sammen til øvelses time:
+     * https://github.com/Distribuerede-Systemer-2016/java-client/blob/master/src/sdk/services/BookService.java
+     *
+     * Asynkront kald der sender krypteret bruger Id.
+     * @param currentUser bruger id for den bruger der skal hentes kurser for.
+     * @param responseCallback asynkront kald til server.
+     */
     //ArrayList<CourseDTO> = T, nu er pladsen T taget, derfor er den ikke en placeholder mere.
     public void getAllCourses(int currentUser, final ResponseCallback<ArrayList<CourseDTO>> responseCallback){
         String encryptedUserId = Digester.encrypt(String.valueOf(currentUser));

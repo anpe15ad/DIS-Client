@@ -9,7 +9,9 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.Set;
 
-/** ConfigLoader anvendes til at hente den unikke config.Json fil, vi har uploadet, hvilket gør f.eks database adgangen uafhægig af hvilken computer den ligger på*/
+/** ConfigLoader anvendes til at hente den unikke config.Json fil, vi har uploadet, hvilket gør f.eks database adgangen uafhægig af hvilken computer den ligger på
+ *  Klasse hentet fra fælles server: https://github.com/emilstepanian/Undervisningsevaluering
+ * */
 public class ConfigLoader {
 
     /** Static variable indlæses alle som String, fordi de hentes fra config.Json.

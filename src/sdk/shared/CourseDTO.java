@@ -3,6 +3,9 @@ package sdk.shared;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Hele klassen er hentet fra vores fælles server: https://github.com/emilstepanian/Undervisningsevaluering
+ */
 public class CourseDTO {
 
     @SerializedName("events")

@@ -17,6 +17,7 @@ import java.util.Scanner;
 
 /**
  * Created by andershoumann on 19/11/2016.
+ * klassen viser alle views for en studerende.
  */
 public class StudentView {
 
@@ -26,7 +27,10 @@ public class StudentView {
         this.controller = new Controller();
     }
 
-
+    /**
+     * mainmenu når bruger er logget ind som studerende.
+     * @param currentUser
+     */
     public void presentView (int currentUser) {
 
         try {
@@ -68,6 +72,10 @@ public class StudentView {
         }
     }
 
+    /**
+     * laver kaldet til at hente kurser for brugeren.
+     * @param currentUser id'et for brugeren logget ind.
+     */
     public void courseView(int currentUser) {
         CourseService courseService = new CourseService();
 
@@ -99,6 +107,11 @@ public class StudentView {
         }
     }
 
+    /**
+     * henter lectures
+     * @param currentUser tager den bruger der er logget ind.
+     * @param binto den code som bruger ønsker lectures for.
+     */
     public void  lectureView(int currentUser, String binto) {
 
         System.out.println("-------------------------------------------------------");
@@ -188,7 +201,11 @@ public class StudentView {
         }
     }
 
-
+    /**
+     * view til at oprette reviews.
+     * @param currentUser tager den nuværende bruger logget ind.
+     * @param lectureid tager bruger id tastet ind af bruger.
+     */
     public void reviewCreateView (int currentUser, int lectureid) {
         ReviewDTO reviewDTO = new ReviewDTO();
 
@@ -228,7 +245,11 @@ public class StudentView {
         }
     }
 
-public void showMyReviews (int currentUser){
+    /**
+     * Viser reviews for et userId
+     * @param currentUser det userId som tages som parameter.
+     */
+    public void showMyReviews (int currentUser){
 
     ReviewService reviewService = new ReviewService();
     reviewService.getUserReviews(currentUser, new ResponseCallback<ArrayList<ReviewDTO>>() {

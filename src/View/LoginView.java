@@ -19,7 +19,10 @@ public class LoginView {
         this.controller = new Controller();
     }
 
-
+    /**
+     * første menu når der skal logges ind.
+     * @param currentUser
+     */
     public void presentLogin (final int currentUser){
         try {
             System.out.println("Velkommen til loginet");

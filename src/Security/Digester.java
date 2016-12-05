@@ -8,8 +8,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 
 /**
- * Klasse hentet fra vores server fra Git.
- * https://github.com/emilstepanian/Undervisningsevaluering
+ * Hele klassen er hentet fra vores fælles server: https://github.com/emilstepanian/Undervisningsevaluering
  *
  * Klassen indeholder alle hash og decrypterings metoder
  * Hashing foregår med md5 hashing.

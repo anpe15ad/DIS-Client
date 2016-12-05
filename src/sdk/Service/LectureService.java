@@ -27,6 +27,9 @@ public class LectureService {
         }
 
     /**
+     * Metode inspireret af metode lavet sammen til øvelses time:
+     * https://github.com/Distribuerede-Systemer-2016/java-client/blob/master/src/sdk/services/BookService.java
+     *
      * Denne metode henter alle lectures ved et asynkront kald igennem responsecallback.
      * @param code der er hvilket BINTO nr kurset har.
      * @param responseCallback

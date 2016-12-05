@@ -2,6 +2,9 @@ package sdk.shared;
 
 import java.util.ArrayList;
 
+/**
+ * Hele klassen er hentet fra vores fælles server: https://github.com/emilstepanian/Undervisningsevaluering
+ */
 public class TeacherDTO extends UserDTO {
 
 	private static final long serialVersionUID = 1L;

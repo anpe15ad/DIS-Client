@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 /**
  * Created by andershoumann on 26/11/2016.
+ * Denne klasse printer alle views en teacher skal bruge.
  */
 public class TeacherView {
     private Controller controller = new Controller();
@@ -205,6 +206,10 @@ public class TeacherView {
         controller.showTeacherMenu(currentUser);
     }
 
+    /**
+     * Viser antallet af deltagere og printer det
+     * @param currentUser
+     */
     public void participents (int currentUser){
         controller.showCourseTeacher(currentUser);
 

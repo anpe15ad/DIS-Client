@@ -16,7 +16,15 @@ import java.io.UnsupportedEncodingException;
  */
 public class UserService {
 
-
+    /**
+     * Denne metode er inspireret og lavet i øvelses timen sammen med Jesper
+     * https://github.com/Distribuerede-Systemer-2016/java-client/blob/master/src/sdk/services/UserService.java
+     *
+     * Login asynkronkald, der laver requestet til serveren
+     * @param mail for den bruger der skal logget ind.
+     * @param password for den bruger der skal logge ind
+     * @param responseCallback responsecallback kaldet asynkron kald.
+     */
     public void login(String mail, String password, final ResponseCallback<UserDTO> responseCallback){
 
         HttpPost postRequest = new HttpPost(Connection.serverURL + "/login");

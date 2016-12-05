@@ -33,6 +33,8 @@ public class ReviewService {
     }
 
     /**
+     * Metode inspireret af metode lavet sammen til øvelses time:
+     * https://github.com/Distribuerede-Systemer-2016/java-client/blob/master/src/sdk/services/BookService.java
      * Kald til serveren der opretter et review
      * @param review DTO af ReviewDTO klassen der bliver postet som en stringEntity
      * @param responseCallback
@@ -64,6 +66,9 @@ public class ReviewService {
     }
 
     /**
+     * Metode inspireret af metode lavet sammen til øvelses time:
+     * https://github.com/Distribuerede-Systemer-2016/java-client/blob/master/src/sdk/services/BookService.java
+     *
      * Henter alle reviews for et lecureID
      * @param lectureId er en int i denne metode.
      * @param responseCallback modtager en Arrayliste af ReviewDTO.
@@ -92,6 +97,9 @@ public class ReviewService {
     }
 
     /**
+     *  Metode inspireret af metode lavet sammen til øvelses time:
+     * https://github.com/Distribuerede-Systemer-2016/java-client/blob/master/src/sdk/services/BookService.java
+     *
      * Henter alle reviews en user har oprettet.
      *
      * @param userId tager det forelæsnings id brugeren har valgt.
@@ -121,6 +129,7 @@ public class ReviewService {
     }
 
     /**
+     *
      * Metode til at softdelete for en user
      *
      * @param reviewDTO'et er det id som brugeren ønsker at slette

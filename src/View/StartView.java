@@ -16,6 +16,9 @@ public class StartView {
         this.controller = new Controller();
     }
 
+    /**
+     * Hovedmenu når programmet startes.
+     */
     public void mainMenu() {
 
         System.out.println("------ Velkommen til undervisningsevaluering ------");
